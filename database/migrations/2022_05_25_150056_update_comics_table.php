@@ -18,7 +18,7 @@ class UpdateComicsTable extends Migration
             $table-> string('title', 100);
             $table-> text('description')->nullable();
             $table-> string('thumb');
-            $table-> decimal('price', 4, 2);
+            $table-> string('price');
             $table-> string('series', 120);
             $table-> date('sale_date');
             $table-> string('type', 100);

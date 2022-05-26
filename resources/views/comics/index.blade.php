@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <section id="first-section">
+        <h2><a href="{{ route('comics.create') }}">Insert new comic</a></h2>
+    </section>
     <section>
         @forelse ($comics as $comic)
             <div>
@@ -33,6 +36,20 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+
+        font-family: sans-serif;
+    }
+
+    #first-section {
+        width: 1200px;
+        text-transform: uppercase;
+        color: green;
+        text-align: center;
+
+        margin: 20px auto 0;
+
+        display: flex;
+        justify-content: center;
     }
 
     body {
