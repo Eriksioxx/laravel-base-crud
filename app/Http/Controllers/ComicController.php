@@ -92,7 +92,7 @@ class ComicController extends Controller
 
         return redirect()->route('comics.index', compact('id'));
     }
- 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -102,5 +102,9 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+        $comic = Comic::find($id);
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }

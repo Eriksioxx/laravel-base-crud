@@ -12,14 +12,16 @@
     <section id="first-section">
         <h2><a href="{{ route('comics.create') }}">Insert new comic</a></h2>
     </section>
+
     <section>
         @forelse ($comics as $comic)
             <div>
+
                 <h2>{{ $comic->title }}</h2>
                 <img src={{ $comic->thumb }} alt="{{ $comic->title }} ">
                 <h5>{{ $comic->sale_date }} &nbsp &nbsp<span>${{ $comic->price }}</span></h5>
                 <p>{{ $comic->description }}</p>
-
+                <a href="{{ route('comics.edit', $comic->id) }}">Edit this comic</a>
 
             </div>
 
