@@ -14,7 +14,17 @@ class CreateComicsTable extends Migration
     public function up()
     {
         Schema::create('comics', function (Blueprint $table) {
+            //
             $table->id();
+
+            $table->string('title', 100);
+            $table->text('description')->nullable();
+            $table->string('thumb');
+            $table->string('price');
+            $table->string('series', 120)->nullable();
+            $table->date('sale_date')->nullable();
+            $table->string('type', 100)->nullable();
+
             $table->timestamps();
         });
     }
@@ -29,3 +39,5 @@ class CreateComicsTable extends Migration
         Schema::dropIfExists('comics');
     }
 }
+
+
